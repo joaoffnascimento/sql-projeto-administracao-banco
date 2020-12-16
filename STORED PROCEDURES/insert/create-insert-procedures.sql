@@ -108,7 +108,7 @@ GO
 
 CREATE PROCEDURE dbo.USP_CRIAR_AEROPORTO
     @p_tpo_aero CHAR(1),
-    @p_cod_cid INT NOT NULL,
+    @p_cod_cid INT,
     @p_nom_aero VARCHAR(40),
     @p_obs VARCHAR(200)
 AS
@@ -152,7 +152,6 @@ BEGIN
 END
 
 GO
-
 
 CREATE PROCEDURE dbo.USP_CRIAR_TARIFAS
     @p_cod_comp INT,
