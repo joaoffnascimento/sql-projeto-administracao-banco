@@ -103,7 +103,7 @@ CREATE TABLE tarifa
     cod_comp INT NOT NULL,
     cod_aero_origem INT NOT NULL,
     cod_aero_destino INT NOT NULL,
-    valor NUMERIC(9,2) NOT NULL,
+    valor NUMERIC(7,2) NOT NULL,
     CONSTRAINT tarifa_pk PRIMARY KEY(cod_comp, cod_aero_origem, cod_aero_destino),
     CONSTRAINT tarifa_fk_companhia_aereal FOREIGN KEY (cod_comp) REFERENCES companhia_aerea (cod_comp),
     CONSTRAINT tarifa_fk_aeroporto_origem FOREIGN KEY (cod_aero_origem) REFERENCES aeroporto (cod_aero),
