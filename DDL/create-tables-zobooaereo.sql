@@ -89,6 +89,7 @@ CREATE TABLE escala
     cod_voo INT NOT NULL,
     num_esc INT NOT NULL,
     cod_aero INT NOT NULL,
+    CONSTRAINT escala_pk PRIMARY KEY(cod_voo, cod_aero),
     CONSTRAINT escala_fk_voo FOREIGN KEY (cod_voo) REFERENCES voo (cod_voo),
     CONSTRAINT escala_fk_aeroporto FOREIGN KEY (cod_aero) REFERENCES aeroporto (cod_aero),
 );
@@ -103,6 +104,7 @@ CREATE TABLE tarifa
     cod_aero_origem INT NOT NULL,
     cod_aero_destino INT NOT NULL,
     valor NUMERIC(9,2) NOT NULL,
+    CONSTRAINT tarifa_pk PRIMARY KEY(cod_comp, cod_aero_origem, cod_aero_destino),
     CONSTRAINT tarifa_fk_companhia_aereal FOREIGN KEY (cod_comp) REFERENCES companhia_aerea (cod_comp),
     CONSTRAINT tarifa_fk_aeroporto_origem FOREIGN KEY (cod_aero_origem) REFERENCES aeroporto (cod_aero),
     CONSTRAINT tarifa_fk_aeroporto_destino FOREIGN KEY (cod_aero_destino) REFERENCES aeroporto (cod_aero)
