@@ -60,8 +60,8 @@ CREATE TABLE voo
     cod_voo INT NOT NULL CHECK(cod_voo > 0) IDENTITY(1, 1) PRIMARY KEY,
     cod_comp INT NOT NULL,
     cod_tpa INT NOT NULL,
-    dia INT NOT NULL,
-    horario INT NOT NULL,
+    dia NUMERIC(2) NOT NULL,
+    horario NUMERIC(4) NOT NULL,
     CONSTRAINT voo_fk_companhia_aerea FOREIGN KEY(cod_comp) REFERENCES companhia_aerea (cod_comp),
     CONSTRAINT voo_fk_tipo_aviao FOREIGN KEY(cod_tpa) REFERENCES tipo_aviao (cod_tpa)
 );
