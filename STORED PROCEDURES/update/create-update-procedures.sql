@@ -37,14 +37,14 @@ GO
 
 CREATE PROCEDURE dbo.USP_MODIFICAR_COMPANHIA_AEREA
     @p_cod_comp int,
-    @p_nom_cid varchar(40),
-    @p_cod_pais int
+    @p_cod_pais varchar(40),
+    @p_dsc_comp  int
 AS
 BEGIN
     UPDATE companhia_aerea
             SET 
-            nom_cid = ISNULL(@p_nom_cid, nom_cid),
-            cod_pais = ISNULL(@p_cod_pais, cod_pais)
+            cod_pais = ISNULL(@p_cod_pais, cod_pais),
+            dsc_comp = ISNULL(@p_dsc_comp , dsc_comp)
             WHERE cod_comp = @p_cod_comp
 END
 
@@ -75,7 +75,6 @@ BEGIN
     UPDATE voo
             SET 
             cod_comp = ISNULL(@p_cod_comp, cod_comp),
-            cod_tpa = ISNULL(@p_cod_tpa, cod_tpa),
             dia = ISNULL(@p_dia, dia),
             horario = ISNULL(@p_horario, horario)
             WHERE cod_voo = @p_cod_voo
@@ -94,7 +93,6 @@ BEGIN
     UPDATE aeroporto
             SET 
             tpo_aero = ISNULL(@p_tpo_aero, tpo_aero),
-            cod_tpa = ISNULL(@p_cod_tpa, cod_tpa),
             cod_cid = ISNULL(@p_cod_cid, cod_cid),
             nom_aero = ISNULL(@p_nom_aero, nom_aero),
             obs = ISNULL(@p_obs, obs)
