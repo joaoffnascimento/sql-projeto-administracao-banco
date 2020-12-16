@@ -12,7 +12,7 @@ PRINT 'Table creation: Paises'
 CREATE TABLE pais
 (
     cod_pais INT NOT NULL CHECK(cod_pais > 0) IDENTITY(1, 1) PRIMARY KEY,
-    dsc_pai VARCHAR(40) NOT NULL,
+    dsc_pais VARCHAR(40) NOT NULL,
     continente CHAR(1) NOT NULL
 );
 
